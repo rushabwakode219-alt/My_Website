@@ -1,31 +1,63 @@
 function initContactForm() {
 
-    const form =
-        document.querySelector("[data-contact-form]");
+    const form = document.querySelector("[data-contact-form]");
 
-    if (!form) return;
+    if (!form) {
+        return;
+    }
 
 
-    form.addEventListener("submit", event => {
+    const button = form.querySelector("[data-submit-button]");
+
+    const buttonText = form.querySelector("[data-submit-text]");
+
+    const status = form.querySelector("[data-form-status]");
+
+
+    form.addEventListener("submit", function (event) {
+
+        /*
+         * Let the browser perform normal HTML validation first.
+         */
+
+        if (!form.checkValidity()) {
+
+            return;
+
+        }
+
 
         /*
          * IMPORTANT:
          *
-         * Do NOT use event.preventDefault()
-         * here.
+         * We DO NOT call event.preventDefault().
          *
-         * Netlify needs the normal POST submission.
+         * Netlify needs the normal POST request.
+         *
+         * The form will submit to:
+         *
+         * /pages/thank-you.html
          */
-
-        const button =
-            form.querySelector("button[type='submit']");
 
         if (button) {
 
             button.disabled = true;
 
-            button.innerHTML =
-                "Sending...";
+        }
+
+
+        if (buttonText) {
+
+            buttonText.textContent = "Sending...";
+
+        }
+
+
+        if (status) {
+
+            status.textContent = "Sending your inquiry...";
+
+            status.classList.add("is-visible");
 
         }
 

@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
@@ -8,51 +7,173 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1">
+        content="width=device-width, initial-scale=1"
+    >
 
     <title>
-        Thank You — GB Photography
+        Thank You — My Name GB Photography
     </title>
+
+    <meta
+        name="description"
+        content="Thank you for contacting My Name GB Photography."
+    >
 
     <link
         rel="stylesheet"
-        href="css/style.css">
+        href="/css/style.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
+
 <body>
 
-    <main
-        class="page-hero"
-        style="min-height:100svh;display:grid;place-items:center;text-align:center;">
 
-        <div class="container">
+    <header class="site-header">
 
-            <div class="eyebrow">
-                Inquiry Received
-            </div>
-
-            <h1 class="display">
-                Thank You.
-            </h1>
-
-            <p>
-                Your inquiry has been received.
-                I'll get back to you soon.
-            </p>
+        <div class="header-inner">
 
             <a
-                href="index.html"
-                class="btn btn--solid">
-
-                Back to Home
-                <span>↗</span>
-
+                class="logo"
+                href="/index.html"
+                data-site-name
+            >
+                My Name GB Photography
             </a>
+
+
+            <nav
+                class="nav"
+                aria-label="Primary"
+            >
+
+                <a href="/index.html">
+                    Home
+                </a>
+
+                <a href="/portfolio.html">
+                    Portfolio
+                </a>
+
+                <a href="/contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button
+                class="theme-toggle"
+                type="button"
+                data-theme-toggle
+                aria-label="Toggle theme"
+            >
+
+                <span data-theme-label>
+                    Light
+                </span>
+
+                / Theme
+
+            </button>
 
         </div>
 
+    </header>
+
+
+    <main>
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="eyebrow">
+                    Inquiry Received
+                </div>
+
+
+                <h1 class="display">
+                    Thank you.
+                </h1>
+
+
+                <p>
+                    Thank you for reaching out.
+                    Your inquiry has been received.
+                    I'll get back to you as soon as possible.
+                </p>
+
+
+                <a
+                    class="btn btn--solid"
+                    href="/index.html"
+                    style="margin-top:30px;"
+                >
+                    Back to Home
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <span>
+                    ©
+                    <span id="year"></span>
+                    <span data-site-name>
+                        My Name GB Photography
+                    </span>
+                </span>
+
+                <span>
+                    Wedding · Cinematic · Editorial
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+
+    <script src="/js/config.js"></script>
+
+    <script src="/js/theme.js"></script>
+
+    <script src="/js/main.js"></script>
 
 </body>
 
